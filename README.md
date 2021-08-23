@@ -24,7 +24,7 @@ Structured h5 files with the video features and annotations of the OVP and Youtu
     /n_frames                 number of video frames
     /ssim_matrix              2D-array with shape (top-5 selected thumbs, n_frames), the structural similarity scores between each of the five most selected thumbnails by the human annotators (in order to support evaluation using 'Precision at 5') and the entire frame sequence; computed using the [structural_similarity function](https://scikit-image.org/docs/dev/api/skimage.metrics.html#skimage.metrics.structural_similarity) of Python
     /top1_thumbnail_ids       the index of the most selected thumbnail by the human annotators (can be more than one if they exist more than one key-frames with the same ranking according to the number of selections made by the human annotators)
-	/top3_thumbnail_ids       the indices of the three most selected thumbnails by the human annotators (can be more than three if they exist more than three key-frames with the same ranking according to the number of selections made by the human annotators)
+    /top3_thumbnail_ids       the indices of the three most selected thumbnails by the human annotators (can be more than three if they exist more than three key-frames with the same ranking according to the number of selections made by the human annotators)
 </pre>
 Original videos and human annotations (in the form of selected video thumbnails) for each dataset, are also available [here](https://sites.google.com/site/vsummsite/download). </div>
 
