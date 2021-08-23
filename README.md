@@ -47,7 +47,7 @@ chmod +x run_youtube_splits.sh  # Makes the script executable.
 ./run_ovp_splits                # Runs the script. 
 ./run_youtube_splits            # Runs the script.  
 ```
-Please note that after each training epoch the algorithm performs an evaluation step, using the trained model to compute the estimated importance scores for the frames of each video of the test set. These scores are then used by the provided [evaluation](https://github.com/e-apostolidis/Video_Thumbnail_Selector/tree/master/evaluation) scripts to assess the overal performance of the model (in Precision at K).
+Please note that after each training epoch the algorithm performs an evaluation step, using the trained model to compute the estimated importance scores for the frames of each video of the test set. These scores are then used by the provided [evaluation](https://github.com/e-apostolidis/Video_Thumbnail_Selector/tree/master/evaluation) scripts to assess the overal performance of the model (in 'Precision at K').
 
 The progress of the training can be monitored via the TensorBoard platform and by:
 - opening a command line (cmd) and running: `tensorboard --logdir=/path/to/log-directory --host=localhost`
