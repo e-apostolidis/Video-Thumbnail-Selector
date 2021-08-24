@@ -28,7 +28,6 @@ Structured h5 files with the video features and annotations of the OVP and Youtu
 </pre>
 Original videos and human annotations (in the form of selected video thumbnails) for each dataset, are also available [here](https://sites.google.com/site/vsummsite/download). </div>
 
-
 ## Training
 <div align="justify">
 
@@ -87,6 +86,21 @@ The utilized model selection criterion relies on the optimization of a core fact
  - `$dataset_name`: the name of the utilized dataset ('OVP' or 'Youtube').
 
 For further details about the adopted structure of directories in our implementation, please check line [#8 of evaluate_exp.sh](https://github.com/e-apostolidis/Video_Thumbnail_Selector/blob/master/evaluation/evaluate_exp.sh#L8). </div>
+
+## Citation
+If you find this implementation useful in your work, please cite the following publication where the corresponding method was proposed:
+
+E. Apostolidis, E. Adamantidou, V. Mezaris and I. Patras, **"Combining Adversarial and Reinforcement Learning for Video Thumbnail Selection"**, in ACM Int. Conf. on Multimedia Retrieval (ICMR), Taipei, Taiwan, November 2021 (accepted for publication).
+
+Bibtex:
+
+@InProceedings{Apostolidis_2021_ICMR,
+    author    = {Apostolidis, Evlampios and Adamantidou, Eleni and Mezaris, Vasileios and Patras, Ioannis},
+    title     = {Combining Adversarial and Reinforcement Learning for Video Thumbnail Selection},
+    booktitle = {Proceedings of the ACM International Conference on Multimedia Retrieval (ICMR)},
+    month     = {November},
+    year      = {2021}
+}
 
 ## License
 <div align="justify">
