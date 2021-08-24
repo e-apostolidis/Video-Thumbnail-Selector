@@ -16,7 +16,7 @@ Tested, checked and verifiend with:
 ## Data
 <div align="justify">
 
-Structured h5 files with the video features and annotations of the OVP and Youtube datasets are available within the [data](https://github.com/e-apostolidis/Video_Thumbnail_Selector/tree/master/data) folder. These files have the following structure:
+Structured h5 files with the video features and annotations of the OVP and Youtube datasets are available within the [data](https://github.com/e-apostolidis/Video-Thumbnail-Selector/tree/master/data) folder. These files have the following structure:
 <pre>
 /key
     /features                 2D-array with shape (n_steps, feature-dimension), feature vectors representing the content of the video frames; extracted from the pool5 layer of a GoogleNet trained on the ImageNet dataset
@@ -31,7 +31,7 @@ Original videos and human annotations (in the form of selected video thumbnails)
 ## Training
 <div align="justify">
 
-To train the model using one of the aforementioned datasets and for a number of randomly created splits of the dataset (where in each split 80% of the data is used for training and 20% for testing) use the corresponding JSON file that is included in the [data/splits](https://github.com/e-apostolidis/Video_Thumbnail_Selector/tree/master/data/splits) directory. This file contains the 10 randomly-generated splits that were utilized in our experiments.
+To train the model using one of the aforementioned datasets and for a number of randomly created splits of the dataset (where in each split 80% of the data is used for training and 20% for testing) use the corresponding JSON file that is included in the [data/splits](https://github.com/e-apostolidis/Video-Thumbnail-Selector/tree/master/data/splits) directory. This file contains the 10 randomly-generated splits that were utilized in our experiments.
 
 For training the model using a single split, run:
 ```shell-script
@@ -39,14 +39,14 @@ python main.py --split_index N --n_epochs E --batch_size B --video_type 'dataset
 ```
 where, `N` refers to index of the used data split, `E` refers to the number of training epochs, `B` refers to the batch size, and `dataset_name` refers to the name of the used dataset.
 
-Alternatively, to train the model for all 10 splits, use the [`run_ovp_splits.sh`](https://github.com/e-apostolidis/Video_Thumbnail_Selector/blob/master/model/run_ovp_splits.sh) and/or [`run_youtube_splits.sh`](https://github.com/e-apostolidis/Video_Thumbnail_Selector/blob/master/model/run_youtube_splits.sh) script and do the following:
+Alternatively, to train the model for all 10 splits, use the [`run_ovp_splits.sh`](https://github.com/e-apostolidis/Video-Thumbnail-Selector/blob/master/model/run_ovp_splits.sh) and/or [`run_youtube_splits.sh`](https://github.com/e-apostolidis/Video-Thumbnail-Selector/blob/master/model/run_youtube_splits.sh) script and do the following:
 ```shell-script
 chmod +x run_ovp_splits.sh    	# Makes the script executable.
 chmod +x run_youtube_splits.sh  # Makes the script executable.
 ./run_ovp_splits                # Runs the script. 
 ./run_youtube_splits            # Runs the script.  
 ```
-Please note that after each training epoch the algorithm performs an evaluation step, using the trained model to compute the estimated importance scores for the frames of each video of the test set. These scores are then used by the provided [evaluation](https://github.com/e-apostolidis/Video_Thumbnail_Selector/tree/master/evaluation) scripts to assess the overal performance of the model (in 'Precision at K').
+Please note that after each training epoch the algorithm performs an evaluation step, using the trained model to compute the estimated importance scores for the frames of each video of the test set. These scores are then used by the provided [evaluation](https://github.com/e-apostolidis/Video-Thumbnail-Selector/tree/master/evaluation) scripts to assess the overal performance of the model (in 'Precision at K').
 
 The progress of the training can be monitored via the TensorBoard platform and by:
 - opening a command line (cmd) and running: `tensorboard --logdir=/path/to/log-directory --host=localhost`
@@ -56,10 +56,10 @@ The progress of the training can be monitored via the TensorBoard platform and b
 <div align="justify">
 
 Setup for the training process:
- - In [`data_loader.py`](https://github.com/e-apostolidis/Video_Thumbnail_Selector/blob/master/model/data_loader.py), specify the path to the h5 file of the used dataset and the path to the JSON file containing data about the utilized data splits.
- - In [`configs.py`](https://github.com/e-apostolidis/Video_Thumbnail_Selector/blob/master/model/configs.py), define the directory where the analysis results will be saved to. </div>
+ - In [`data_loader.py`](https://github.com/e-apostolidis/Video-Thumbnail-Selector/blob/master/model/data_loader.py), specify the path to the h5 file of the used dataset and the path to the JSON file containing data about the utilized data splits.
+ - In [`configs.py`](https://github.com/e-apostolidis/Video-Thumbnail-Selector/blob/master/model/configs.py), define the directory where the analysis results will be saved to. </div>
    
-Arguments in [`configs.py`](https://github.com/e-apostolidis/Video_Thumbnail_Selector/blob/master/model/configs.py): 
+Arguments in [`configs.py`](https://github.com/e-apostolidis/Video-Thumbnail-Selector/blob/master/model/configs.py): 
 Parameter name | Description | Default Value | Options
 | ---: | :--- | :---: | :---:
 `--mode` | Mode for the configuration. | 'train' | 'train', 'test'
@@ -80,12 +80,12 @@ Parameter name | Description | Default Value | Options
 ## Model Selection and Evaluation 
 <div align="justify">
 
-The utilized model selection criterion relies on the optimization of a core factor of the training process (i.e., the received reward) and enables the selection of a well-trained model by indicating the training epoch. To evaluate the trained models of the architecture and automatically select a well-trained model, run [`evaluate_exp.sh`](https://github.com/e-apostolidis/Video_Thumbnail_Selector/blob/master/evaluation/evaluate_exp.sh). To run this file, specify:
+The utilized model selection criterion relies on the optimization of a core factor of the training process (i.e., the received reward) and enables the selection of a well-trained model by indicating the training epoch. To evaluate the trained models of the architecture and automatically select a well-trained model, run [`evaluate_exp.sh`](https://github.com/e-apostolidis/Video-Thumbnail-Selector/blob/master/evaluation/evaluate_exp.sh). To run this file, specify:
  - `$base_path`: the path to the folder where the analysis results are stored (e.g., '../data/results'),
  - `$exp_id`: the ID of the conducted experiment (e.g., 'exp1'), and
  - `$dataset_name`: the name of the utilized dataset ('OVP' or 'Youtube').
 
-For further details about the adopted structure of directories in our implementation, please check [line #8 of evaluate_exp.sh](https://github.com/e-apostolidis/Video_Thumbnail_Selector/blob/master/evaluation/evaluate_exp.sh#L8). </div>
+For further details about the adopted structure of directories in our implementation, please check [line #8 of evaluate_exp.sh](https://github.com/e-apostolidis/Video-Thumbnail-Selector/blob/master/evaluation/evaluate_exp.sh#L8). </div>
 
 ## Citation
 If you find this implementation useful in your work, please cite the following publication where the corresponding method was proposed:
