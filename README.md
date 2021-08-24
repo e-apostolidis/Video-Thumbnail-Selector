@@ -95,11 +95,17 @@ E. Apostolidis, E. Adamantidou, V. Mezaris and I. Patras, **"Combining Adversari
 Bibtex:
 
 @InProceedings{Apostolidis_2021_ICMR,
+
     author    = {Apostolidis, Evlampios and Adamantidou, Eleni and Mezaris, Vasileios and Patras, Ioannis},
+
     title     = {Combining Adversarial and Reinforcement Learning for Video Thumbnail Selection},
+    
     booktitle = {Proceedings of the ACM International Conference on Multimedia Retrieval (ICMR)},
+    
     month     = {November},
+    
     year      = {2021}
+    
 }
 
 ## License
