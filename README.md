@@ -85,7 +85,7 @@ The utilized model selection criterion relies on the optimization of a core fact
  - `$exp_id`: the ID of the conducted experiment (e.g., 'exp1'), and
  - `$dataset_name`: the name of the utilized dataset ('OVP' or 'Youtube').
 
-For further details about the adopted structure of directories in our implementation, please check line [#8 of evaluate_exp.sh](https://github.com/e-apostolidis/Video_Thumbnail_Selector/blob/master/evaluation/evaluate_exp.sh#L8). </div>
+For further details about the adopted structure of directories in our implementation, please check [line #8 of evaluate_exp.sh](https://github.com/e-apostolidis/Video_Thumbnail_Selector/blob/master/evaluation/evaluate_exp.sh#L8). </div>
 
 ## Citation
 If you find this implementation useful in your work, please cite the following publication where the corresponding method was proposed:
