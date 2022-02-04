@@ -4,11 +4,13 @@ import numpy as np
 from os import listdir
 import h5py
 
-frames_dir = '/home/apostolid/data/thumbnail_datasets/OVP/video_frames'
-thumbnail_dir = '/home/apostolid/data/thumbnail_datasets/OVP/thumbnail_images'
+# path where the frames of each video of the dataset are stored
+frames_dir = '../<dataset_name>/video_frames'
+# path where the thumbnails of each video of the dataset are stored
+thumbnail_dir = '../<dataset_name>/thumbnail_images'
 
 # h5 file where we will add info about the selected top-1/3/5 thumbnails and the ssim metric between them and each frame of the video
-h5_file = '/home/apostolid/data/thumbnail_datasets/OVP/my_ovp.h5'
+h5_file = '../<dataset_name>/<dataset_name>.h5'
 
 # open h5 file to append information
 hdf = h5py.File(h5_file, 'a')
