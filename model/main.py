@@ -7,8 +7,8 @@ if __name__ == '__main__':
     config = get_config(mode='train')
     test_config = get_config(mode='test')
 
-    print(config.__dict__)
-    print(test_config.__dict__)
+    print(config)
+    print(test_config)
 
     train_loader = get_loader(config.mode, config.video_type, config.split_index)
     test_loader = get_loader(test_config.mode, test_config.video_type, test_config.split_index)
