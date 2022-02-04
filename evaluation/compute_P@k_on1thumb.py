@@ -50,7 +50,7 @@ for split in range(10):
 		my_index = top3_indices[0]  # the top 1 thumbnail
 		P1 = 0
 		for gt_index in top1_thumbnail_ids:
-			if ssim_matrix[my_index, gt_index] > 0.7:
+			if ssim_matrix[my_index, gt_index] > ssim_threshold:
 				P1 = 1
 				break
 		P1_split += P1
@@ -59,7 +59,7 @@ for split in range(10):
 		P3 = 0
 		for my_index in top3_indices[:3]:
 			for gt_index in top1_thumbnail_ids:
-				if ssim_matrix[my_index, gt_index] > 0.7:
+				if ssim_matrix[my_index, gt_index] > ssim_threshold:
 					P3 = 1
 					break
 			if P3 == 1:
