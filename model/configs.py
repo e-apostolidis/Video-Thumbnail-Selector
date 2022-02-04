@@ -30,8 +30,7 @@ class Config(object):
         self.score_dir = save_dir.joinpath(video_type, 'results/split' + str(self.split_index))
         self.save_dir = save_dir.joinpath(video_type, 'models/split' + str(self.split_index))
 
-
-def __repr__(self):
+    def __repr__(self):
         """Pretty-print configurations in alphabetical order"""
         config_str = 'Configurations\n'
         config_str += pprint.pformat(self.__dict__)
