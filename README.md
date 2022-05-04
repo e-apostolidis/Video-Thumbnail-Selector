@@ -3,7 +3,7 @@
 ## PyTorch Implementation of the Video Thumbnail Selector
 <div align="justify">
 
-- From **"Combining Adversarial and Reinforcement Learning for Video Thumbnail Selection"**, Proc. ACM ICMR 2021.
+- From **"Combining Adversarial and Reinforcement Learning for Video Thumbnail Selection"**, Proc. of the ACM Int. Conf. on Multimedia Retrieval (ICMR), Taipei, Taiwan, Nov. 2021.
 - Written by Evlampios Apostolidis, Eleni Adamantidou, Vasileios Mezaris and Ioannis Patras.
 - This software can be used for training a deep learning architecture for video thumbnail selection after taking under consideration the representativeness and the aesthetic quality of the video frames. Training is performed in a fully-unsupervised manner based on a combination of adversarial and reinforcement learning. After being trained on a collection of videos, the Video Thumbnail Selector is capable of selecting a set of representative video thumbnails for unseen videos, according to a user-specified value about the number of required thumbnails. </div>
 
