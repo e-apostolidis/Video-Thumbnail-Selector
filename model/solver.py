@@ -68,10 +68,6 @@ class Solver(object):
         """KL( q(e|x) || N(0,1) )"""
         return 0.5 * torch.sum(-1 + log_variance.exp() + mu.pow(2) - log_variance)
 
-    def sparsity_loss(self, scores):
-        """Summary-Length Regularization"""
-
-        return torch.abs(torch.mean(scores) - self.config.regularization_factor)
 
     criterion = nn.MSELoss()
 
